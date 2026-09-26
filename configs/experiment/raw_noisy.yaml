@@ -1,0 +1,28 @@
+experiment:
+  name: raw_noisy
+  seed: 2026
+  output_root: outputs
+
+data_config: configs/data/av2_subset.yaml
+model_config: configs/model/gru_multimodal.yaml
+
+input:
+  state_source: raw
+  confidence_features: []
+
+corruption:
+  type: gaussian_position
+  position_std_m: 0.3
+  seed: 2026
+  history_only: true
+
+training:
+  epochs: 20
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  mixed_precision: true
+  early_stopping_patience: 5
+  num_workers: 4
+  save_best: true
+  save_last: true

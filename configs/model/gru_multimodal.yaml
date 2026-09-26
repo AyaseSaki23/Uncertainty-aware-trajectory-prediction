@@ -1,0 +1,17 @@
+model:
+  name: gru_multimodal
+  input_variant: raw
+  fusion: none
+  num_modes: 6
+  motion_input_dim: 4
+  confidence_input_dim: 0
+  embedding_dim: 64
+  hidden_dim: 128
+  num_layers: 1
+  dropout: 0.0
+  predict_displacements: false
+
+loss:
+  trajectory: smooth_l1
+  mode: cross_entropy
+  mode_weight: 1.0

@@ -1,0 +1,21 @@
+dataset:
+  name: argoverse2_motion_forecasting
+  raw_root: data/raw/av2
+  processed_root: data/processed/av2
+  official_split: train
+  history_steps: 50
+  future_steps: 60
+  nominal_dt_seconds: 0.1
+  use_actual_timestamps: true
+  target_category: focal_track
+
+subset:
+  enabled: true
+  scene_count: 64
+  sampling: seeded_random
+  seed: 2026
+
+cache:
+  shard_size: 256
+  float_dtype: float32
+  overwrite: false

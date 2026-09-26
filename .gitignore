@@ -1,0 +1,43 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Local documentation (kept on the workstation, not published)
+/README.md
+/docs/
+/data/README.md
+/demo/README.md
+
+# Large data, caches, checkpoints, and experiment artifacts
+data/*
+datasets/
+checkpoints/
+outputs/*
+!outputs/.gitkeep
+logs/
+wandb/
+*.ckpt
+*.pth
+*.pt
+*.npz
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
