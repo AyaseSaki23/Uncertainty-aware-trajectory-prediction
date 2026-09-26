@@ -30,6 +30,7 @@ class ProjectStructureTest(unittest.TestCase):
             "src/trajectory_prediction/training/engine.py",
             "src/trajectory_prediction/visualization/bev.py",
             "scripts/preprocess_av2.py",
+            "scripts/download_av2_motion.py",
             "scripts/train.py",
             "scripts/evaluate.py",
             "scripts/visualize_predictions.py",
