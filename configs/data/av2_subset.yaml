@@ -11,11 +11,11 @@ dataset:
 
 subset:
   enabled: true
-  scene_count: 64
+  scene_count: 10
   sampling: seeded_random
   seed: 2026
 
 cache:
-  shard_size: 256
+  shard_size: 5
   float_dtype: float32
   overwrite: false
