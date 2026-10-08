@@ -143,6 +143,7 @@ class AV2DataPipelineTest(unittest.TestCase):
             restored = load_cache_shard(cache_dir / shards[0]["file"])[0]
             self.assertEqual(restored.scenario_id, sample.scenario_id)
             self.assertEqual(restored.split, "train")
+            self.assertEqual(restored.coordinate_frame, "global")
             np.testing.assert_array_equal(restored.timestamps_ns, sample.timestamps_ns)
             np.testing.assert_array_equal(restored.history_position, sample.history_position)
             np.testing.assert_array_equal(restored.future_mask, sample.future_mask)

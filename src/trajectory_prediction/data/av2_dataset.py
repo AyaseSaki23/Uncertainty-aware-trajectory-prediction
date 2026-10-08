@@ -350,6 +350,7 @@ def write_cache_shards(
             "split": np.asarray([item.split for item in chunk]),
             "focal_track_id": np.asarray([item.focal_track_id for item in chunk]),
             "city": np.asarray([item.city for item in chunk]),
+            "coordinate_frame": np.asarray([item.coordinate_frame for item in chunk]),
             "reference_heading_rad": np.asarray(
                 [item.reference_heading_rad for item in chunk], dtype=np.float32
             ),
@@ -378,6 +379,11 @@ def load_cache_shard(path: str | Path) -> list[TrajectorySample]:
         count = len(payload["scenario_id"])
         for index in range(count):
             values = {field: payload[field][index].copy() for field in _ARRAY_FIELDS}
+            coordinate_frame = (
+                str(payload["coordinate_frame"][index])
+                if "coordinate_frame" in payload.files
+                else "global"
+            )
             samples.append(
                 TrajectorySample(
                     scenario_id=str(payload["scenario_id"][index]),
@@ -385,6 +391,7 @@ def load_cache_shard(path: str | Path) -> list[TrajectorySample]:
                     focal_track_id=str(payload["focal_track_id"][index]),
                     city=str(payload["city"][index]),
                     reference_heading_rad=float(payload["reference_heading_rad"][index]),
+                    coordinate_frame=coordinate_frame,
                     **values,
                 )
             )
