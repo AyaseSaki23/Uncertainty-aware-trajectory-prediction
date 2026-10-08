@@ -11,6 +11,7 @@ class ProjectStructureTest(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         required = [
             "configs/data/av2_subset.yaml",
+            "configs/data/av2_val_cv.yaml",
             "configs/model/gru_multimodal.yaml",
             "configs/experiment/raw_clean.yaml",
             "configs/experiment/raw_noisy.yaml",
@@ -18,6 +19,7 @@ class ProjectStructureTest(unittest.TestCase):
             "configs/experiment/kf_confidence.yaml",
             "src/trajectory_prediction/data/av2_dataset.py",
             "src/trajectory_prediction/data/corruptions.py",
+            "src/trajectory_prediction/evaluation/cv.py",
             "src/trajectory_prediction/geometry/coordinates.py",
             "src/trajectory_prediction/filtering/kalman_cv.py",
             "src/trajectory_prediction/filtering/features.py",
