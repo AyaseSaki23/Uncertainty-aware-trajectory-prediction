@@ -29,6 +29,7 @@ class ProjectStructureTest(unittest.TestCase):
             "src/trajectory_prediction/losses/multimodal.py",
             "src/trajectory_prediction/metrics/forecasting.py",
             "src/trajectory_prediction/metrics/robustness.py",
+            "src/trajectory_prediction/reporting/tables.py",
             "src/trajectory_prediction/training/engine.py",
             "src/trajectory_prediction/visualization/bev.py",
             "scripts/preprocess_av2.py",
